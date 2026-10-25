@@ -194,7 +194,7 @@ function extractIntent(args: unknown): string | undefined {
 function shortenVenvName(pyPath: string | undefined): string {
   if (!pyPath) return "python";
   const parts = pyPath.replace(/\\/g, "/").split("/").filter(Boolean);
-  // e.g. /home/mishap/vllm-env/bin/python -> vllm-env
+  // e.g. /home/user/vllm-env/bin/python -> vllm-env
   const binIdx = parts.lastIndexOf("bin");
   if (binIdx > 0) {
     return parts[binIdx - 1] || "python";

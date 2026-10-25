@@ -9,12 +9,12 @@ export function registerWslEvalTool(pi: ExtensionAPI) {
   pi.registerTool({
     name: "wsl_eval",
     label: "WSL Python",
-    description: "Execute Python code directly inside Windows Subsystem for Linux (WSL). Runs in the selected distribution and virtual environment (e.g. /home/mishap/vllm-env/bin/python) without nested bash -c or quote-escaping issues.",
+    description: "Execute Python code directly inside Windows Subsystem for Linux (WSL). Runs in the selected distribution and virtual environment (e.g. /home/user/vllm-env/bin/python) without nested bash -c or quote-escaping issues.",
     parameters: z.object({
       code: z.string().describe("Python source code to execute inside WSL"),
       title: z.string().optional().describe("Short transcript label (e.g. 'inspect vllm config')"),
       distro: z.string().optional().describe("WSL distribution name (e.g. Ubuntu-24.04). Defaults to configured or default distro"),
-      python: z.string().optional().describe("Python binary or virtualenv path inside WSL (e.g. /home/mishap/vllm-env/bin/python)"),
+      python: z.string().optional().describe("Python binary or virtualenv path inside WSL (e.g. /home/user/vllm-env/bin/python)"),
       cwd: z.string().optional().describe("Working directory inside WSL or Windows path (e.g. /mnt/c/project or C:\\project)"),
       timeout: z.number().optional().describe("Execution timeout in seconds (default: 60)"),
     }),

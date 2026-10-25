@@ -9,13 +9,13 @@ alwaysApply: true
 When working inside Windows Subsystem for Linux (WSL), always prefer omp's built-in native tools over running `wsl -d ... -- bash -c "..."` or using `wsl_bash` for simple file operations.
 
 ### File System Access
-The built-in tools natively understand WSL paths through the UNC prefix `\\wsl.localhost\<distro>\...` (e.g., `\\wsl.localhost\Ubuntu-24.04\home\mishap\project\src\main.py`).
+The built-in tools natively understand WSL paths through the UNC prefix `\\wsl.localhost\<distro>\...` (e.g., `\\wsl.localhost\Ubuntu-24.04\home\user\project\src\main.py`).
 
 | Task | Do this | Don't do this |
 |---|---|---|
-| Read a file | Use `read` with `path: "\\wsl.localhost\Ubuntu-24.04\home\mishap\src\file.py"` or `path: "/home/mishap/src/file.py"` | Use `wsl_bash` with `cat` or `head` |
-| Search content | Use `grep` with `path: "/home/mishap/src"` | Use `wsl_bash` with `grep` or `rg` |
-| Find files | Use `glob` with `path: "/home/mishap/src"` | Use `wsl_bash` with `find` or `ls` |
+| Read a file | Use `read` with `path: "\\wsl.localhost\Ubuntu-24.04\home\user\src\file.py"` or `path: "/home/user/src/file.py"` | Use `wsl_bash` with `cat` or `head` |
+| Search content | Use `grep` with `path: "/home/user/src"` | Use `wsl_bash` with `grep` or `rg` |
+| Find files | Use `glob` with `path: "/home/user/src"` | Use `wsl_bash` with `find` or `ls` |
 | Edit a file | Use `edit` or `write` | Use `wsl_bash` with `sed -i` |
 
 ### Running Code
