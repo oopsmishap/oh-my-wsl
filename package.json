@@ -1,0 +1,39 @@
+{
+  "name": "oh-my-wsl",
+  "version": "1.0.0",
+  "description": "Native WSL integration for oh-my-pi: seamless eval, bash execution, and python environment management for Windows Subsystem for Linux",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "build:bridge": "bun build --compile bin/bridge.ts --outfile bin/wsl-python-bridge.exe",
+    "postinstall": "bun run build:bridge || true",
+    "test": "bun test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oopsmishap/oh-my-wsl.git"
+  },
+  "keywords": [
+    "omp",
+    "oh-my-pi",
+    "pi-extension",
+    "pi-package",
+    "wsl",
+    "wsl2",
+    "ubuntu",
+    "python",
+    "eval"
+  ],
+  "author": "mishap",
+  "license": "MIT",
+  "omp": {
+    "extensions": [
+      "./index.ts"
+    ]
+  },
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
